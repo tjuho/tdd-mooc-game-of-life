@@ -1,8 +1,9 @@
 import { expect } from "chai";
-import { sum } from "../src/example.mjs";
+import { readInputFile } from "../src/inputparser.mjs";
 
-describe("Example test fixture", () => {
-  it("Example test", () => {
-    expect(sum(1, 2)).to.equal(3);
+describe("Test input parser", () => {
+  it("read input file", () => {
+    let data = readInputFile("");
+    expect(data.length).to.not.equal(0);
   });
 });
