@@ -45,6 +45,7 @@ export function stateToMatrix(stateString, width, height) {
       }
     } else if (ch === 'o') {
       for (let r = 0; r < repeat; r++){
+        console.log(res[y]);
         res[y][x++] = true;
       }
       repeat = 1;
