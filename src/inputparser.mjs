@@ -24,5 +24,5 @@ export function readState(data) {
     }
     res = line + res;
   }
-  return res;
+  return res.replace("\r","");
 }

@@ -18,4 +18,8 @@ describe("Test input parser", () => {
     let data = readInputFile("./test/blinker.rle");
     expect(readState(data)).to.equal("3o!");
   });
+  it("read state with many rows", () => {
+    let data = readInputFile("./test/blinker1.rle");
+    expect(readState(data)).to.equal("3o!3o!");
+  });
 });
