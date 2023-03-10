@@ -1,3 +1,5 @@
+import { readInputFile, readWidth, readHeight, readState, stateToMatrix } from "./inputparser.mjs";
+
 const args = process.argv;
 console.log(args);
 if (args.length !== 4){
