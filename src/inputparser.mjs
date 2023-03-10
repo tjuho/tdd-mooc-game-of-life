@@ -13,3 +13,7 @@ export function readHeight(data) {
   let res = data.match(/\sy\s=\s(\d+)/);
   return res ? parseInt(res[1]) : null;
 }
+
+export function readState(data) {
+  return [];
+}
