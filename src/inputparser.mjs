@@ -27,7 +27,7 @@ export function readState(data) {
   return res.replace("\r","");
 }
 
-export function stateToMatrix(stateString) {
+export function stateToMatrix(stateString, width, height) {
   let res = [[]];
   return res;
 }
