@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { readInputFile, readWidth, readHeight } from "../src/inputparser.mjs";
+import { readInputFile, readWidth, readHeight, readState } from "../src/inputparser.mjs";
 
 describe("Test input parser", () => {
   it("read input file", () => {
@@ -13,5 +13,9 @@ describe("Test input parser", () => {
   it("read height", () => {
     let data = readInputFile("./test/blinker.rle");
     expect(readHeight(data)).to.equal(1);
+  });
+  it("read state", () => {
+    let data = readInputFile("./test/blinker.rle");
+    expect(readState(data)).to.equal([[1,1,1]]);
   });
 });
