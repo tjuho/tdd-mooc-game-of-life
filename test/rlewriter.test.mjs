@@ -14,3 +14,10 @@ describe("Test RLE writer with glider", () => {
     expect(matrixToRLE(matrix)).to.equal("bob$2bo$3o!");
   });
 });
+
+describe("Test RLE writer with custom shape", () => {
+  const matrix = [[false,true,true],[false,false,true],[true,true,true]];
+  it("matrix to rle", () => {
+    expect(matrixToRLE(matrix)).to.equal("b2o$2bo$3o!");
+  });
+});
