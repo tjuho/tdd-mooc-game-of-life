@@ -23,7 +23,6 @@ export function shrink(matrix){
     }
     res = rotateMatrix(res);
   }
-  console.log(res);
   return res;
 }
     
