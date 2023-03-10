@@ -26,3 +26,8 @@ export function readState(data) {
   }
   return res.replace("\r","");
 }
+
+export function stateToMatrix(stateString) {
+  let res = [[]];
+  return res;
+}
