@@ -1,7 +1,7 @@
 {
-  "name": "tdd-mooc-new-js-project",
+  "name": "tdd-mooc-game-of-life-exercise",
   "version": "1.0.0-SNAPSHOT",
-  "description": "TODO",
+  "description": "Game of life script",
   "license": "TODO",
   "private": true,
   "dependencies": {
