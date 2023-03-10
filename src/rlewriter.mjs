@@ -12,21 +12,20 @@ export function matrixToRLE(matrix) {
       } else { 
         ch = 'b';
       }
-      if (!(x === width-1)){
-        if (!(prevch === ch) && !(prevch === '')){
-          res += (repeat > 1) ? repeat.toString()+ch : ch;
-          repeat = 1
-        } else {
-          repeat += 1;
-        }
-      } else if (x === width-1 && y === height-1){
+      if (prevch === ch){
+        repeat += 1;
+      } else {
+        res += (repeat > 1) ? repeat.toString()+prevch : prevch;
+        repeat = 1;
+        prevch = ch;
+      }
+      if (x === width-1 && y === height-1){
         res += (repeat > 1) ? repeat.toString()+ch : ch;
         res += "!";
-      } else {
+      } else if (x === width-1){
         res += (repeat > 1) ? repeat.toString()+ch : ch;
         res += "$";
       }
-      prevch = ch;
     }
   }   
   return res;
