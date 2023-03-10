@@ -25,4 +25,7 @@ describe("Game of life evolution tests with glider", () => {
   it("Move a step", () => {
     expect(step(glidermat)).to.deep.equal([[true,false,true], [false,true,true], [false,true,false]]);
   });
+  it("After four steps glider should be the same as when started", () => {
+    expect(step(step(step(step(glidermat))))).to.deep.equal(glidermat);
+  });
 });
