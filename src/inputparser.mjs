@@ -15,5 +15,14 @@ export function readHeight(data) {
 }
 
 export function readState(data) {
-  return [];
+  let res = "";
+  let lines = data.split("\n");
+  for (let i = lines.length-1; i >= 0; i--) {
+    let line = lines[i];
+    if (line.includes("x = ")) {
+      break;
+    }
+    res = line + res;
+  }
+  return res;
 }
