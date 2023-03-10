@@ -6,6 +6,6 @@ describe("Game of life evolution tests", () => {
     expect(expand([[true, true, true]])).to.deep.equal([[false, false, false, false, false],[false, true, true, true, false],[false, false, false, false, false]]);
   });
   it("Shrink away empty horizontal and vertical lines from the area", () => {
-    expect(shrink([[false, false, false, false, false],[false, true, true, true, false],[false, false, false, false, false]]).to.deep.equal([[true, true, true]]));
+    expect(shrink([[false, false, false, false, false],[false, true, true, true, false],[false, false, false, false, false]])).to.deep.equal([[true, true, true]]);
   });
 });

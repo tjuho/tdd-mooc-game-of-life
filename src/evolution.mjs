@@ -12,3 +12,21 @@ export function expand(matrix) {
   }
   return res;
 }
+
+export function shrink(matrix){
+  let res = matrix;
+  const owidth = matrix[0].length;
+  const oheight = matrix.length;
+  for (let d = 0; d < 4; d++){
+    while (res.length > 0 && !(res[0].reduce((a,b) => (a || b), false))){
+      res.shift();
+    }
+    res = rotateMatrix(res);
+  }
+  console.log(res);
+  return res;
+}
+    
+function rotateMatrix(matrix){
+  return matrix.length === 0 ? [] : matrix[0].map((val, index) => matrix.map(row => row[index]).reverse());
+}
