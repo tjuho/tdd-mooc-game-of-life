@@ -28,6 +28,43 @@ export function readState(data) {
 }
 
 export function stateToMatrix(stateString, width, height) {
-  let res = [[]];
+  let res = [];
+  for (let h = 0; h < height; h++) {
+    res[h] = Array(width).fill(false);
+  }
+  let x = 0;
+  let y = 0;
+  let repeat = 1;
+  for (let idx = 0; idx < stateString.length; idx++){
+    const ch = stateString[idx];
+    if (isNumber(ch)){
+      if (repeat === 1){
+        repeat = parseInt(ch);
+      } else {
+        repeat = repeat * 10 + parseInt(ch);
+      }
+    } else if (ch === 'o') {
+      for (let r = 0; r < repeat; r++){
+        res[y][x++] = true;
+      }
+      repeat = 1;
+    } else if (ch === 'b') {
+      x = x+repeat;
+      repeat = 1;
+    } else if (ch === '$') {
+      y = y+repeat;
+      x = 0;
+      repeat = 1;
+    } else if (ch === '!') {
+      break;
+    } else {
+      console.log("should not reach here", ch);
+      break;
+    }
+  }
   return res;
+}
+
+function isNumber(char) {
+  return /^\d$/.test(char);
 }

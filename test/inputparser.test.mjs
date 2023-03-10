@@ -26,6 +26,7 @@ describe("Test input parser", () => {
     let data = readInputFile("./test/blinker.rle");
     const w = readWidth(data);
     const h = readHeight(data);
-    expect(stateToMatrix(data, w, h)).to.equal([[1,1,1]]);
+    const state = readState(data);
+    expect(stateToMatrix(data, w, h)).to.equal([[true, true, true]]);
   });
 });
