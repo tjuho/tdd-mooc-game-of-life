@@ -1,3 +1,5 @@
+import fs from "fs"
+
 export function readInputFile(path) {
-  return "";
+  return fs.readFileSync(path);
 }
