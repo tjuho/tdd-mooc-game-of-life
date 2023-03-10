@@ -1,8 +1,8 @@
 import { expect } from "chai";
-import { sum } from "../src/evolution.mjs";
+import { expand } from "../src/evolution.mjs";
 
-describe("Example test fixture", () => {
-  it("Example test", () => {
-    expect(sum(1, 2)).to.equal(3);
+describe("Game of life evolution tests", () => {
+  it("Expand the area", () => {
+    expect([[true, true, true]]).to.equal([[false, false, false, false, false],[false, true, true, true, false],[false, false, false, false, false]]);
   });
 });
