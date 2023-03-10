@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { readInputFile, readWidth, readHeight, readState } from "../src/inputparser.mjs";
+import { readInputFile, readWidth, readHeight, readState, stateToMatrix } from "../src/inputparser.mjs";
 
 describe("Test input parser", () => {
   it("read input file", () => {
@@ -21,5 +21,9 @@ describe("Test input parser", () => {
   it("read state with many rows", () => {
     let data = readInputFile("./test/blinker1.rle");
     expect(readState(data)).to.equal("3o!3o!");
+  });
+  it("test changing input state string to matrix", () => {
+    let data = readInputFile("./test/blinker.rle");
+    expect(stateToMatrix(data)).to.equal([[1,1,1]]);
   });
 });
