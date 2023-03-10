@@ -5,6 +5,7 @@ import { matrixToRLE } from "./rlewriter.mjs";
 const args = process.argv;
 if (args.length !== 4){
   console.log("usage: start [rlefile] [count]");
+  throw "Error";
 }
 const file = args[2];
 const count = parseInt(args[3]);
